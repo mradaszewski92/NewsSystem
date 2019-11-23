@@ -8,3 +8,8 @@
 easy_admin:
   entities:
     - App\Entity\News
+  design:
+    menu:
+       - { label: 'Return to home page', url: "../../news/index" }
+
+  

@@ -13,7 +13,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         
-                        <a class="nav-item nav-link" href="admin_panel">Admin panel</a>
+                        <a class="nav-item nav-link" href="admin">Go to Admin panel</a>
                     </div>
                 </div>
             </nav>
@@ -25,7 +25,13 @@
             <ul class="list-group">
 
             {% for url in urls %}
-                <li class="list-group-item"><a href=" {{ url.id }}">{{ url.title }}</a><br></li>
+                {% if loop.last %}
+                    <li class="list-group-item"><a href=" {{ url.id }}"><p class="text-danger">LAST NEWS: {{ url.title }}</p></a></li>
+                    
+                {% else %}
+                    <li class="list-group-item"><a href=" {{ url.id }}">{{ url.title }}</a><br></li>
+                {% endif%}
+                <br>
             {% endfor %}
             </ul>
         </div>
