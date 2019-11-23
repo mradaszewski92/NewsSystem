@@ -1,0 +1,17 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+newsletter:
+    path: /news/index
+    controller: App\Controller\NewsletterControler::index
+
+admin_panel:
+    path: /news/admin_panel
+    controller: App\Controller\NewsletterControler::index  
+
+news_body:
+    path: /news/{id}
+    controller: App\Controller\NewsController::showEntity
+
+

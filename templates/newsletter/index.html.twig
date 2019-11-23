@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Breking NEWS </title>
+    </head>
+    <body>
+        <div>
+            
+            <a href="admin_panel">Admin pane</a>
+        </div>
+
+        <div>
+            {% for url in urls %}
+                <a href=" {{ url.id }}">{{ url.title }}</a><br>
+            {% endfor %}
+        </div>
+
+        <div>
+            <h5>footer</h5>
+        </div>
+
+    </body>
+</html>
