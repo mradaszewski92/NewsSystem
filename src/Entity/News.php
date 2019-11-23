@@ -26,6 +26,16 @@ class News
      */
     private $Body;
 
+    /**
+     * @ORM\Column(type="string", length=30, nullable=true)
+     */
+    private $author;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $date;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -51,6 +61,30 @@ class News
     public function setBody(?string $Body): self
     {
         $this->Body = $Body;
+
+        return $this;
+    }
+
+    public function getAuthor(): ?string
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?string $author): self
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
 
         return $this;
     }

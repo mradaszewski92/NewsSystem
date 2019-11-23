@@ -22,18 +22,30 @@
         <hr>    
         
         <div class="row">
-            <ul class="list-group">
 
-            {% for url in urls %}
-                {% if loop.last %}
-                    <li class="list-group-item"><a href=" {{ url.id }}"><p class="text-danger">LAST NEWS: {{ url.title }}</p></a></li>
-                    
-                {% else %}
-                    <li class="list-group-item"><a href=" {{ url.id }}">{{ url.title }}</a><br></li>
-                {% endif%}
-                <br>
-            {% endfor %}
-            </ul>
+            <div class="list-group list-group-flush">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for url in urls %}
+                        <tr>
+                            <th scope="row">{{ url.id }}</th>
+                            <td>{{ url.title }}</td>
+                            <td>Author</td>
+                            <td>Date</td>
+                        </tr>
+                    {% endfor %}   
+                </tbody>
+            </table> 
+           
+            </div>
         </div>
         <div class="row">
             
